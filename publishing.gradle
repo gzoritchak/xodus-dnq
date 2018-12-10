@@ -60,16 +60,18 @@ if (project.hasProperty("ossrhUser") && project.hasProperty("ossrhPassword")) {
     }
 }
 
-if (project.project.hasProperty("publishTo")) {
+
+
+//if (project.project.hasProperty("publishTo")) {
     subprojects {
         apply plugin: 'maven-publish'
 
         publishing {
-            repositories {
-                maven {
-                    url project.publishTo
-                }
-            }
+//            repositories {
+//                maven {
+//                    url project.publishTo
+//                }
+//            }
             publications {
                 mavenJava(MavenPublication) {
                     from components.java
@@ -81,4 +83,4 @@ if (project.project.hasProperty("publishTo")) {
             }
         }
     }
-}
+//}
